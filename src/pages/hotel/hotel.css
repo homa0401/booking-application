@@ -133,3 +133,19 @@
   width: 80%;
   height: 80vh;
 }
+
+.close{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: lightgrey;
+  cursor: pointer;
+}
+
+.arrow{
+  margin: 20px;
+  font-size: 50px;
+  color: lightgrey;
+  cursor: pointer;
+}
