@@ -43,10 +43,13 @@ const Hotel = () => {
 
   return (
     <div>
+      <Navbar />
+      <Header type="list" />
+      <div className="hotelContainer">
           {open && (
             <div className="slider">
-              <FontAwesomeIcon icon={faCircleXmark} />
-              <FontAwesomeIcon icon={faCircleArrowLeft} />
+              <FontAwesomeIcon icon={faCircleXmark} className='close'/>
+              <FontAwesomeIcon icon={faCircleArrowLeft} className='arrow'/>
               <div className="sliderWrapper">
                 <img
                   src={photos[slideNumber].src}
@@ -54,12 +57,9 @@ const Hotel = () => {
                   className="sliderImg"
                 />
               </div>
-              <FontAwesomeIcon icon={faCircleArrowRight} />
+              <FontAwesomeIcon icon={faCircleArrowRight} className='arrow'/>
             </div>
           )}
-      <Navbar />
-      <Header type="list" />
-      <div className="hotelContainer">
         <div className="hotelWrapper">
           <button className="bookNow">Reserve or Book Now!</button>
           <h1 className="hotelTitle">Grand Hotel</h1>
