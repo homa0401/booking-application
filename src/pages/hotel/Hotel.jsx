@@ -43,18 +43,22 @@ const Hotel = () => {
 
   return (
     <div>
+          {open && (
+            <div className="slider">
+              <FontAwesomeIcon icon={faCircleXmark} />
+              <FontAwesomeIcon icon={faCircleArrowLeft} />
+              <div className="sliderWrapper">
+                <img
+                  src={photos[slideNumber].src}
+                  alt=""
+                  className="sliderImg"
+                />
+              </div>
+              <FontAwesomeIcon icon={faCircleArrowRight} />
+            </div>
+          )}
       <Navbar />
       <Header type="list" />
-        {open && (
-          <div className="slider">
-            <FontAwesomeIcon icon={faCircleXmark} />  
-            <FontAwesomeIcon icon={faCircleArrowLeft} />
-            <div className="sliderWrapper">
-              <img src={photos[slideNumber].src} alt="" className="sliderImg" />
-            </div>
-            <FontAwesomeIcon icon={faCircleArrowRight} />
-          </div>
-        )}
       <div className="hotelContainer">
         <div className="hotelWrapper">
           <button className="bookNow">Reserve or Book Now!</button>
@@ -71,9 +75,9 @@ const Hotel = () => {
           </span>
           <div className="hotelImages">
             {photos.map((photo, i) => (
-              <div className="hotelImgWrapper">
+              <div className="hotelImgWrapper" key={i}>
                 <img
-                  onClick={()=>handleOpen(i)}
+                  onClick={() => handleOpen(i)}
                   src={photo.src}
                   alt=""
                   className="hotelImg"
